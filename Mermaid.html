@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid JS in HTML Example</title>
+    <style>
+        /* Optional: Add some basic styling if needed */
+        body { font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+    <h1>My Mermaid Diagram</h1>
+
+    <div class="mermaid">
+        graph TD;
+            A[Client] --> B(Load Balancer);
+            B --> C{Web Server 1};
+            B --> D{Web Server 2};
+            C --> E[Database];
+            D --> E;
+    </div>
+
+    <h2>Another Diagram (Class Diagram)</h2>
+
+    <pre class="mermaid">
+    classDiagram
+        Animal <|-- Duck
+        Animal <|-- Fish
+        Animal <|-- Zebra
+        Animal : +int age
+        Animal : +String gender
+        Animal: +isMammal()
+        Animal: +mate()
+        class Duck{
+            +String beakColor
+            +swim()
+            +quack()
+        }
+        class Fish{
+            -int sizeInFt
+            -canEat()
+        }
+        class Zebra{
+            +bool is_wild
+            +run()
+        }
+    </pre>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+
+    <script>
+        // Basic initialization call
+        mermaid.initialize({ startOnLoad: true });
+
+        // --- OR ---
+        // You can also provide configuration options:
+        // mermaid.initialize({
+        //    startOnLoad: true,
+        //    theme: 'neutral', // Options: 'default', 'neutral', 'dark', 'forest'
+        //    securityLevel: 'loose', // Options: 'strict', 'loose', 'antiscript', 'sandbox'
+        //    // ... other options
+        // });
+        // Check Mermaid JS documentation for all config options.
+    </script>
+
+</body>
+</html>
